@@ -10,21 +10,29 @@ type Event {
 type RoomEvent{
   _id: ID!
   roomName:String
-  roomId:String
   creator:UserEvent!
 }
 
 type UserEvent {
   _id:ID!,
+  name:String!
   email:String!
   password:String
   createdRoom:[RoomEvent!]
 }
 
 input UserInput{
+  name:String!
   email:String!
   password:String!
+  
 }  
+
+type AuthData{
+  userID:ID!
+  token: String!
+  tokenExpiration: Int!
+}
 
 input EventInput {
   name:String!
@@ -33,13 +41,13 @@ input EventInput {
 
 input RoomInput{
   roomName:String
-  roomId:String
 }
 
  type RootQuery{
       events:[Event!]!
       roomEvents:[RoomEvent!]!
       userEvents:[UserEvent!]!
+      login(email:String!, password: String!):AuthData!
  }
 
  type RootMutation{
