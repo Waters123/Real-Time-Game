@@ -1,4 +1,5 @@
 const Room = require("../../models/room");
+const User = require("../../models/user");
 const { user } = require("./merge");
 
 module.exports = {
@@ -16,11 +17,13 @@ module.exports = {
     }
   },
 
-  createRoom: async args => {
+  createRoom: async (args, req) => {
+    if (!req.isAuth) {
+      throw new Error("user is not authenticated");
+    }
     const event = new Room({
       roomName: args.roomInput.roomName,
-      roomId: args.roomInput.roomId,
-      creator: "5e8608ebba80fc2cdcabc8f3"
+      creator: req.userID
     });
     let createdRoom;
     try {
@@ -30,7 +33,7 @@ module.exports = {
         ...result._doc,
         creator: user.bind(this, result._doc.creator)
       };
-      const existingUser = await User.findById("5e8608ebba80fc2cdcabc8f3");
+      const existingUser = await User.findById(req.userID);
 
       if (!existingUser) {
         throw new Error("user not found");
