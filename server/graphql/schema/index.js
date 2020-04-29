@@ -29,6 +29,7 @@ input UserInput{
 }  
 
 type AuthData{
+  name:String!
   userID:ID!
   token: String!
   tokenExpiration: Int!
