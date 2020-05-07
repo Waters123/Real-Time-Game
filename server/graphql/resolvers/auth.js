@@ -49,20 +49,21 @@ module.exports = {
   login: async ({ email, password }) => {
     const user = await User.findOne({ email: email });
     if (!user) {
-      throw new Error("Something is incorrect");
+      throw new Error("user is incorrect");
     }
-    const isEqual = await bcrypt.compare(password, user.password);
+    const isEqual = await bcrypt.compare(password.trim(), user.password);
+   
     if (!isEqual) {
-      throw new Error("Something is incorrect");
+      throw new Error("paasword is incorrect");
     }
     const token = jwt.sign(
-      { userID: user.id, email: user.email },
+      { userID: user.id, email: user.email, name:user.name },
       "secretkey",
       {
         expiresIn: "2h"
       }
     );
 
-    return { userID: user.id, token: token, tokenExpiration: 2 };
+    return { userID: user.id, token: token, tokenExpiration: 2, name:user.name };
   }
 };

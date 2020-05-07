@@ -21,11 +21,11 @@ module.exports = {
     return event
       .save()
       .then(result => {
-        console.log(result);
+       
         return { ...result._doc };
       })
       .catch(err => {
-        console.log(err);
+       
         throw err;
       });
   }
