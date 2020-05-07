@@ -35,5 +35,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^6.9.0",
+    "prettier": "^2.0.4"
   }
 }

@@ -14,7 +14,7 @@ html {
 }
 
 body {
-	font-family: "Lato", sans-serif;
+	font-family: 'Anton', 'Lato', sans-serif;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 1.7;
