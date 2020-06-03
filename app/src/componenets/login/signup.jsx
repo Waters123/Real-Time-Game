@@ -69,7 +69,12 @@ export function SignUp({ setIsRegiterd }) {
           <form className={classes.root} autoComplete="off" onSubmit={handlesubmit}>
             <TextField id="standard-secondary" label="E-mail" inputRef={emailEl} />
             <TextField id="standard-secondary" label="Username" inputRef={userName} />
-            <TextField id="standard-secondary" label="Password" inputRef={passwordEl} />
+            <TextField
+              id="standard-secondary"
+              label="Password"
+              inputRef={passwordEl}
+              type="password"
+            />
             <div className={classes.btnwrapper}>
               <Button type="submit" variant="contained" color="primary">
                 <span>Register</span>

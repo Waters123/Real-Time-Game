@@ -19,13 +19,14 @@ function loadFromLocalStorage() {
 function App({ state, login }) {
   const storage = loadFromLocalStorage();
 
-  if (storage && !state.data.token) {
+  if (storage && !state.token) {
     login(storage);
   }
+
   return (
     <>
       <StyledGlobal />
-      {state.data.token ? <AuthenticatedApp /> : <UnAuthenticatedApp />}
+      {state.token ? <AuthenticatedApp /> : <UnAuthenticatedApp />}
     </>
   );
 }

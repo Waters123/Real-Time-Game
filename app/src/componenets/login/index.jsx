@@ -8,6 +8,7 @@ import maokai from '../../assets/images/maokai.png';
 import fizz from '../../assets/images/fizz.png';
 
 const LoginWrapper = styled.div`
+  font-family: 'Anton';
   .login-box {
     margin: 15rem 0 0 2rem;
     display: flex;

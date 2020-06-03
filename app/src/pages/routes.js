@@ -1,3 +1,4 @@
 export const ROUTES = {
-  home: "/"
+  join: '/join',
+  game: '/game'
 };

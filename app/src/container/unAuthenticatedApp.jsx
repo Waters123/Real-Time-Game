@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
@@ -19,13 +19,14 @@ const Wrapper = styled.div`
     }
 
     h1 {
+      font-family: 'Anton';
       font-size: 15rem;
       color: #fff;
     }
   }
 `;
 
-function unAuthenticatedApp({ auth, onLogin }) {
+function UnAuthenticatedApp({ auth, onLogin }) {
   return (
     <Wrapper>
       <div className="content-signup">
@@ -39,4 +40,4 @@ function unAuthenticatedApp({ auth, onLogin }) {
   );
 }
 
-export default unAuthenticatedApp;
+export default UnAuthenticatedApp;

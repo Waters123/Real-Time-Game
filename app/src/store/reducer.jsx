@@ -1,12 +1,11 @@
 const initialState = {
   login: {
-    data: {
-      token: null,
-      name: null,
-      tokenExpiration: null,
-      userID: null
-    }
+    token: null,
+    name: null,
+    tokenExpiration: null,
+    userID: null
   },
+
   auth: false
 };
 
@@ -22,12 +21,10 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         login: {
-          data: {
-            token: null,
-            name: null,
-            tokenExpiration: null,
-            userID: null
-          }
+          token: null,
+          name: null,
+          tokenExpiration: null,
+          userID: null
         }
       };
       break;

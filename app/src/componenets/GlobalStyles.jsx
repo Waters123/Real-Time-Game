@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const StyledGlobal = createGlobalStyle`
 *,
@@ -14,10 +14,10 @@ html {
 }
 
 body {
-	font-family: 'Anton', 'Lato', sans-serif;
+	font-family: 'Lato', 'Anton',  sans-serif;
 	font-weight: 400;
 	font-size: 16px;
-	line-height: 1.7;
+	line-height: 1.6;
 	box-sizing: border-box;
 
 }
