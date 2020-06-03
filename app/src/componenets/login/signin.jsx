@@ -48,8 +48,8 @@ function Signin({ setIsRegiterd, onIncrementCounter, state, login }) {
 
   useEffect(() => {
     if (data.data) {
-      login(data);
-      saveToLocalStorage(data);
+      login(data.data.login);
+      saveToLocalStorage(data.data.login);
     }
   }, [data.data]);
 
@@ -85,7 +85,12 @@ function Signin({ setIsRegiterd, onIncrementCounter, state, login }) {
         <div>
           <form className={classes.root} autoComplete="off" onSubmit={handlesubmit}>
             <TextField id="standard-secondary" label="E-mail" inputRef={email} />
-            <TextField id="standard-secondary" label="Password" inputRef={password} />
+            <TextField
+              id="standard-secondary"
+              label="Password"
+              inputRef={password}
+              type="password"
+            />
             <div className={classes.btnwrapper}>
               <Button type="submit" variant="contained" color="primary">
                 <span>Login</span>

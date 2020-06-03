@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 
 import { logOut } from '../store/actions';
+import { Pages } from '../pages/index';
 
-function loadFromLocalStorage() {
+const Wrapper = styled.div`
+  .user-profile {
+    display: flex;
+    justify-content: flex-end;
+    h5 {
+      font-family: 'Lato';
+      font-size: 1.5rem;
+    }
+    button {
+      margin: 0 0 0 1rem;
+    }
+  }
+`;
+
+function removeFromLocalStorage() {
   try {
     const serializedState = localStorage.removeItem('state');
   } catch (e) {
@@ -11,17 +27,20 @@ function loadFromLocalStorage() {
   }
 }
 
-function authenticatedApp({ state, logOut }) {
+function AuthenticatedApp({ state, logOut }) {
   const handleLogOut = () => {
     logOut({ type: 'logout' });
-    loadFromLocalStorage();
+    removeFromLocalStorage();
   };
 
   return (
-    <>
-      <h1>Welcome {state.data.name}</h1>
-      <button onClick={handleLogOut}>logout</button>
-    </>
+    <Wrapper>
+      <div className="user-profile">
+        <h5>Wecolme, {state.name} </h5>
+        <button onClick={handleLogOut}>logout</button>
+      </div>
+      <Pages />
+    </Wrapper>
   );
 }
 
@@ -31,4 +50,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { logOut })(authenticatedApp);
+export default connect(mapStateToProps, { logOut })(AuthenticatedApp);
