@@ -6,12 +6,16 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "query-string": "^6.12.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
+    "react-scroll-to-bottom": "^2.0.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "socket.io-client": "^2.3.0",
     "styled-components": "^5.0.1"
   },
   "scripts": {
@@ -34,5 +38,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^6.9.0",
+    "prettier": "^2.0.4"
   }
 }
